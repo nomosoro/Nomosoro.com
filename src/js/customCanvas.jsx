@@ -19,7 +19,7 @@ export default class CustomCanvas extends React.Component{
              )
              :
              (
-             <div className="canvas-css {this.state.classNames}"></div>
+             <div className="canvas-css"></div>
              )
              }
             </div>

@@ -8,8 +8,8 @@ export default class Nomosoro extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            introShown:true,
-            sectionShown:false,
+            isHomeActive:true,
+            isSectionActive:false,
             activeSectionName:null,
         }
         
@@ -17,36 +17,36 @@ export default class Nomosoro extends React.Component{
         this.closeSection=this.closeSection.bind(this);
     }
     openSection(sectionName){
-        console.log('Opening section with sectionName' + sectionName);
-        this.hideIntro();
+        console.log('Opening section with sectionName ' + sectionName + '.');
+        this.hideHome();
         this.setState({
-            sectionShowm:true,
+            isSectionActive:true,
             activeSectionName:sectionName});
     }
     closeSection(){
-         console.log('Closing Section.');
-        this.setState({sectionShowm:false });
-        this.showIntro();
+        console.log('Closing Section.');
+        this.setState({isSectionActive:false });
+        this.showHome();
     }
-    showIntro(){ 
-        this.setState({introShown:true});
+    showHome(){ 
+        this.setState({isHomeActive:true});
     }
-    hideIntro(){
-        this.setState({introShown:false});
+    hideHome(){
+        this.setState({isHomeActive:false});
     }
     render(){
+        var homeClasses=(this.state.isHomeActive ? 'active' : 'inactive');
         return (
          <div className="nomosoro">
-            <div className="intro-container {this.state.introShown?shown:hidden}">
+            <div className={"home-container " + homeClasses}>
                 <CustomCanvas />
                 <SectionButton sectionTitle="Who am I" sectionName="profile" handler={this.openSection}/>
                 <SectionButton sectionTitle="Portofolio" sectionName="portofolio" handler={this.openSection}/>
                 <SectionButton sectionTitle="Thoughts" sectionName="thoughts" handler={this.openSection}/>
                 <SectionButton sectionTitle="Connect Me" sectionName="connect" handler={this.openSection}/>
+                <div className="home-summary">{this.props.data.home.summary}</div>
             </div>
-            <div className="section-container {this.state.sectionShown?shown:hidden}">
-                <SectionWrapper sectionName={this.state.activeSectionName} closeHandler={this.closeSection}></SectionWrapper>
-            </div>
+            <SectionWrapper sectionName={this.state.activeSectionName} closeHandler={this.closeSection} isActive={this.state.isSectionActive} data={this.props.data.sections}></SectionWrapper>
          </div>
         )
     }

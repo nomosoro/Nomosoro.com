@@ -1,6 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    entry: './src/js/scripts.js',
+    entry: './src/js/scripts.jsx',
     output: {
         path: __dirname + "/dist/",
         filename: 'js/nomosoro.js',

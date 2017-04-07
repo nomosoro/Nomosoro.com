@@ -5,6 +5,6 @@ export default class ConnectSection extends React.Component{
          super(props);
     }
     render(){
-        
+        return (<div className="section-content connect">Connect Page</div>)
     }
 }

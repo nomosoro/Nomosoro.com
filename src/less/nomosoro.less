@@ -1,7 +1,30 @@
 // out: ../css/nomosoro.css, compress: true, strictMath: true, autoprefixer : true,
 body {
     background: hsla(40, 50%, 70%, 1);
-    color:hsla(0,0%,40%,1);
+    color:hsla(220,0%,40%,1);
 }
 
+div.home-container{
+    &.active{
+        display:flex;
+    }
+    &.inactive{
+        display:none;
+    }
+}
+div.section-container{
+    &.active{
+        display:flex;
+    }
+    &.inactive{
+        display:none;
+    }
+}
+a{
+    color:darkcyan;
+    &:hover{
+        cursor:pointer;
+        text-decoration:underline;
+    }
+}
 
