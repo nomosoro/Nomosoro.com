@@ -19,10 +19,9 @@ export default class PortofolioItem extends React.Component{
         });
     }
     render(){
-        var className="Portofolio-item-wrapper " + (this.state.open && "open");
+        var className="portofolio-item-wrapper " + (this.state.open && "open");
         return (
             <div className={className}>
-                <p>{'I am a ' + this.props.type + 'porotofolio item.'}</p>
                 <PortofolioItemViewer {...this.props.viewer} handlerClick={this.handleViewerClicked} ></PortofolioItemViewer>
                 <PortofolioItemContent {...this.props.content} handlerClose={this.handleContentClosed}></PortofolioItemContent>
             </div>
@@ -38,7 +37,9 @@ class PortofolioItemViewer extends React.Component{
     render(){
         return (
             <div className="portofolio-item-viewer" onClick={this.props.handlerClick}>
-                <img className="portofolio-item-viewer-img" src={this.props.imgUrl}></img>
+                <div className="portofolio-item-viewer-img-container">  
+                    <img src={this.props.imgUrl}></img>
+                </div>
                 <div className="portofolio-item-viewer-summary">{this.props.summary}</div>
             </div>
         );

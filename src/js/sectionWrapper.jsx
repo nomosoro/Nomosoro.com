@@ -34,9 +34,7 @@ export default class SectionWrapper extends React.Component{
         var activeClass = this.props.isActive? 'active':'inactive';
         return(
             <div className={"section-container " + activeClass}>
-                <div className="section-toolbar">
-                    <button className="close-section-button" onClick={this.handlerCloseSection}>Back to home</button>
-                </div>
+                <div className="close-section-button" onClick={this.handlerCloseSection}>Back to home</div>
                 {sectionComponent}
             </div>
         )

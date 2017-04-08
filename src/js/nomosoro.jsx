@@ -39,7 +39,7 @@ export default class Nomosoro extends React.Component{
         return (
          <div className="nomosoro">
             <div className={"home-container " + homeClasses}>
-                <SectionButton sectionTitle="Who are you?" sectionName="profile" handler={this.openSection} pos="top-left" isFadeout={this.state.isSectionActive}/>
+                <SectionButton sectionTitle="Who are you?" sectionName="profile" handler={this.openSection} pos="top-left" isFadeout={this.state.isSectionActive} underhood={<img src="./img/nomosoro.logo.png" className="logo-mid"></img>}/>
                 <SectionButton sectionTitle="Portofolio" sectionName="portofolio" handler={this.openSection} pos="top-right" isFadeout={this.state.isSectionActive}/>
                 <SectionButton sectionTitle="Thoughts" sectionName="thoughts" handler={this.openSection} pos="bottom-left" isFadeout={this.state.isSectionActive}/>
                 <SectionButton sectionTitle="Connect Me" sectionName="connect" handler={this.openSection} pos="bottom-right" isFadeout={this.state.isSectionActive}/>

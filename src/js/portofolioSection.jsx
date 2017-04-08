@@ -11,7 +11,7 @@ export default class PortofolioSection extends React.Component{
         })
         return (<div className="section-content portofolio">
             <h2>Portofolio Page</h2>
-            <div className="portofolio-item-container">
+            <div className="content-wrapper">
                 {portofolioItems}
             </div>
         </div>)
