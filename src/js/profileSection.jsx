@@ -6,9 +6,9 @@ export default class ProfileSection extends React.Component{
     }
     render(){
         var contentComponents=[];
-        if(this.props.data.contents&&this.props.data.contents.length){
+        if(this.props.contents&&this.props.contents.length){
             //content shoud contain at least 'type'.
-            this.props.data.contents.forEach(function(content,i){
+            this.props.contents.forEach(function(content,i){
                 if(content.type=='block'){
                     if(content.header){
                         contentComponents.push(<ProfileBlockHeader header={content.header} key={'header_'+i}></ProfileBlockHeader>);

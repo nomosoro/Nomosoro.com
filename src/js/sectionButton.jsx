@@ -11,8 +11,11 @@ export default class SectionButton extends React.Component {
         }
     }
     render(){
+        var className="section-button " + this.props.pos + ' ' + (this.props.isFadeout && 'fadeout' );
         return(
-            <button className="section-button" onClick={this.handleOnClick}>{this.props.sectionTitle}</button>
+            <div className={className} onClick={this.handleOnClick}>
+            <span className="section-button-text">{this.props.sectionTitle}</span>
+            </div>
         )
     }
 }

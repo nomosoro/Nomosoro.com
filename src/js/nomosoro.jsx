@@ -39,14 +39,13 @@ export default class Nomosoro extends React.Component{
         return (
          <div className="nomosoro">
             <div className={"home-container " + homeClasses}>
-                <CustomCanvas />
-                <SectionButton sectionTitle="Who am I" sectionName="profile" handler={this.openSection}/>
-                <SectionButton sectionTitle="Portofolio" sectionName="portofolio" handler={this.openSection}/>
-                <SectionButton sectionTitle="Thoughts" sectionName="thoughts" handler={this.openSection}/>
-                <SectionButton sectionTitle="Connect Me" sectionName="connect" handler={this.openSection}/>
-                <div className="home-summary">{this.props.data.home.summary}</div>
+                <SectionButton sectionTitle="Who are you?" sectionName="profile" handler={this.openSection} pos="top-left" isFadeout={this.state.isSectionActive}/>
+                <SectionButton sectionTitle="Portofolio" sectionName="portofolio" handler={this.openSection} pos="top-right" isFadeout={this.state.isSectionActive}/>
+                <SectionButton sectionTitle="Thoughts" sectionName="thoughts" handler={this.openSection} pos="bottom-left" isFadeout={this.state.isSectionActive}/>
+                <SectionButton sectionTitle="Connect Me" sectionName="connect" handler={this.openSection} pos="bottom-right" isFadeout={this.state.isSectionActive}/>
+                <div className="home-summary">{this.props.home.summary}</div>
             </div>
-            <SectionWrapper sectionName={this.state.activeSectionName} closeHandler={this.closeSection} isActive={this.state.isSectionActive} data={this.props.data.sections}></SectionWrapper>
+            <SectionWrapper {...this.props.sections} sectionName={this.state.activeSectionName} closeHandler={this.closeSection} isActive={this.state.isSectionActive}></SectionWrapper>
          </div>
         )
     }

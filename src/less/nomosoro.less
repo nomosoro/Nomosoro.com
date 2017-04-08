@@ -1,24 +1,7 @@
 // out: ../css/nomosoro.css, compress: true, strictMath: true, autoprefixer : true,
 body {
-    background: hsla(40, 50%, 70%, 1);
+    background:white;
     color:hsla(220,0%,40%,1);
-}
-
-div.home-container{
-    &.active{
-        display:flex;
-    }
-    &.inactive{
-        display:none;
-    }
-}
-div.section-container{
-    &.active{
-        display:flex;
-    }
-    &.inactive{
-        display:none;
-    }
 }
 a{
     color:darkcyan;
@@ -28,3 +11,128 @@ a{
     }
 }
 
+div.nomosoro{
+    position:fixed;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    width:100%;
+}
+
+div.home-container{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    background:white;
+    &.active{
+        display:flex;
+    }
+    &.inactive{
+        display:flex;
+    }
+    
+    div.section-button{
+        position:fixed;
+        width:50vw;
+        height:50vh;
+        font-size:1.8vw;
+        font-weight:300;
+        background:white;
+        transition: transform 1s,background .3s,color .3s;
+        color:grey;
+        display:flex;
+        align-items: center;
+        justify-content:center;
+        z-index:1;
+        &.top-left{
+            top:-5px;
+            left:-5px;
+            border:5px solid lightgray;
+            &:hover{
+                background:hsla(32,30%,40%,1);
+                color:hsla(0,0,80%,1);
+            }
+            &.fadeout{
+                overflow:hidden;
+                box-shadow: 10px 10px 20px 0px hsla(0,0%,60%,1);
+                transform:translate(-105%,-105%);
+            }
+        }
+        &.top-right{
+            top:-5px;
+            right:-5px;
+            border:5px solid lightgray;
+            &:hover{
+                background:hsla(96,30%,40%,1);
+                color:hsla(0,0,80%,1);
+            }
+             &.fadeout{
+                 
+                overflow:hidden;
+                box-shadow: -10px 10px 20px 0px hsla(0,0%,60%,1);
+                transform:translate(105%,-105%);
+            }
+        }
+        &.bottom-left{
+            bottom:-5px;
+            left:-5px;
+            border:5px solid lightgray;
+            &:hover{
+                background:hsla(160,30%,40%,1);
+                color:hsla(0,0,80%,1);
+            }
+             &.fadeout{
+                 
+            overflow:hidden;
+            box-shadow: 10px -10px 20px 0px hsla(0,0%,60%,1);
+                transform:translate(-105%,105%);
+            }
+        }
+        &.bottom-right{
+            bottom:-5px;
+            right:-5px;
+            border:5px solid lightgray;
+            &:hover{
+                background:hsla(224,30%,40%,1);
+                color:hsla(0,0,80%,1);
+            }
+             &.fadeout{
+                overflow:hidden;
+                box-shadow: -10px -10px 20px 0px hsla(0,0%,60%,1);
+                transform:translate(105%,105%);
+            }
+        }
+        
+    }
+}
+
+div.section-container{
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    transition: opacity .5s;
+    background:white;
+    display:flex;
+    
+    &.active{
+        z-index:3;
+        opacity:1;
+    }
+    &.inactive{
+        z-index:0;
+        opacity:0;
+    }
+}
+
+div.portofolio-item-wrapper{
+    div.portofolio-item-viewer{
+        
+    }
+    div.portofolio-item-content{
+        
+    }
+}
