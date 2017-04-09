@@ -21,13 +21,13 @@ export default class SectionWrapper extends React.Component{
             }
             switch(this.props.sectionName){
                 case 'profile':
-                    return (<ProfileSection {...this.props.profile}></ProfileSection>);
+                    return (<ProfileSection ></ProfileSection>);
                 case 'portofolio':
-                    return (<PortofolioSection {...this.props.portofolio}></PortofolioSection>);
+                    return (<PortofolioSection ></PortofolioSection>);
                 case 'thoughts':
-                    return (<ThoughtsSection {...this.props.thoughts}></ThoughtsSection>);
+                    return (<ThoughtsSection ></ThoughtsSection>);
                 case 'connect':
-                    return (<ConnectSection {...this.props.connect}></ConnectSection>);
+                    return (<ConnectSection ></ConnectSection>);
             }
         })();
         console.log('Rendered component: ', sectionComponent);

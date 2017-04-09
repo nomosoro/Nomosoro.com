@@ -4,6 +4,10 @@ import SectionButton from './sectionButton.jsx';
 import SectionWrapper from './sectionWrapper.jsx';
 import CustomCanvas from './customCanvas.jsx';
 
+var home={
+      summary:'This is a summary Text'
+}
+
 export default class Nomosoro extends React.Component{
     constructor(props){
         super(props);
@@ -39,11 +43,11 @@ export default class Nomosoro extends React.Component{
         return (
          <div className="nomosoro">
             <div className={"home-container " + homeClasses}>
-                <SectionButton sectionTitle="Who are you?" sectionName="profile" handler={this.openSection} pos="top-left" isFadeout={this.state.isSectionActive} underhood={<img src="./img/nomosoro.logo.png" className="logo-mid"></img>}/>
+                <SectionButton sectionTitle="What is this? Who are you?" sectionName="profile" handler={this.openSection} pos="top-left" isFadeout={this.state.isSectionActive} underhood={<img src="./img/nomosoro.logo.png" className="logo-mid"></img>}/>
                 <SectionButton sectionTitle="Portofolio" sectionName="portofolio" handler={this.openSection} pos="top-right" isFadeout={this.state.isSectionActive}/>
                 <SectionButton sectionTitle="Thoughts" sectionName="thoughts" handler={this.openSection} pos="bottom-left" isFadeout={this.state.isSectionActive}/>
                 <SectionButton sectionTitle="Connect Me" sectionName="connect" handler={this.openSection} pos="bottom-right" isFadeout={this.state.isSectionActive}/>
-                <div className="home-summary">{this.props.home.summary}</div>
+                <div className="home-summary">{home.summary}</div>
             </div>
             <SectionWrapper {...this.props.sections} sectionName={this.state.activeSectionName} closeHandler={this.closeSection} isActive={this.state.isSectionActive}></SectionWrapper>
          </div>

@@ -45,17 +45,3 @@ class PortofolioItemViewer extends React.Component{
         );
     }
 }
-class PortofolioItemContent extends React.Component{
-    render(){
-        return (
-            <div className="portofolio-item-content">
-                <div className="portofolio-item-content-toolbar">
-                    <button className="close-button" onClick={this.props.handlerClose}>close</button>
-                </div>
-                <div className="article">
-                    {this.props.html}
-                </div>
-            </div>
-        );
-    }
-}
