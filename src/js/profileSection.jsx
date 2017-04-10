@@ -51,7 +51,8 @@ export default class ProfileSection extends React.Component{
                 <h4>And</h4>
                 <ul><li>everything I am interested in and capable to start with. Thanks to youtube and various specific communities, I can learn every skill I desire without much efforts. I am practicing my written skills, oral representation skills, drawing/painting skills, music skills, coding skills, design skills, 3D modeling skills and others in a round robin manner, or whenever manner.</li></ul>
                 <h3>To conclude...</h3>
-                <p>First I have to apologize for minimal features here, as unfortunately, this website is still under development. But you can view it in github freely, and suggest any improvement or leave your comments in the issues, for now. You can also read a detailed meta-introduction to it in my portofolio.</p>
+                <p>Please allow me to apologize for minimal features and the poor UI here, as this website is built in a very short time for information display only, and it is still under development. But you can view it in github freely, and suggest any improvement or leave your comments in the issues, for now. You can also read a detailed meta-introduction to it in my portofolio.</p>
+                <p>#8/4/2017 at Hong Kong</p>
             </div>
         );
         return (<div className="section-content profile">

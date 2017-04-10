@@ -41,3 +41,6 @@ Temp/
 
 # Modules #
 node_modules/
+
+# Meta Files #
+*.psd

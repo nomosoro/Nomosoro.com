@@ -1,6 +1,7 @@
 import React from 'react';
 import NewshubIntro from './article/newshubIntro.jsx';
 import LittleBlueIntro from './article/littleBlueIntro.jsx';
+import SketchesIntro from './article/sketchesIntro.jsx';
 var items=[
     {
         type:'Modeling',
@@ -14,13 +15,23 @@ var items=[
         }
     },
     {
-        type:'game',
+        type:'Application',
         viewer:{
-            imgUrl:'./img/newshub1.PNG',
-            summary:'I am a another viewer summary'
+            imgUrl:'./img/newshub/newshub0.png',
+            summary:'A powerful single page application for news viewing and managing.'
         },
         content:{
-            html:'I am a game content'
+            html:<NewshubIntro></NewshubIntro>
+        }
+    },
+    {
+        type:'Sketch',
+        viewer:{
+            imgUrl:'./img/sketch2.jpg',
+            summary:'Here are several finished or unfinished sketch works of mine, to be continued.'
+        },
+        content:{
+            html:<SketchesIntro></SketchesIntro>
         }
     }
 ];
@@ -30,10 +41,12 @@ export default class PortofolioSection extends React.Component{
          super(props);
         this.state={
             isContentShowing:false,
-            activeIndex:-1
+            activeIndex:-1,
+            isContentScrolled:false,
         }
         this.handleViewerClicked=this.handleViewerClicked.bind(this);
         this.handleContentClosed=this.handleContentClosed.bind(this);
+        this.handleContentScroll=this.handleContentScroll.bind(this);
     }
     handleViewerClicked(i){
         console.log('viewerClicked with index i');
@@ -44,8 +57,22 @@ export default class PortofolioSection extends React.Component{
     }
     handleContentClosed(){
         this.setState({
-            isContentShowing:false
+            isContentShowing:false,
+            isContentScrolled:false
         });
+        document.getElementById('portofolio-content').scrollTop=0;
+    }
+    handleContentScroll(e){
+        var elem=e.target;
+        if(elem.scrollTop>50){
+            this.setState({
+                isContentScrolled:true
+            });
+        }else{
+            this.setState({
+                isContentScrolled:false
+            })
+        }
     }
     render(){
         var root=this;
@@ -58,6 +85,7 @@ export default class PortofolioSection extends React.Component{
 //            portofoiloItemContent.push();
 //        }
         var className="section-content portofolio " + (this.state.isContentShowing ? 'content-showing' : '');
+        var contentClassName="portofolio-content " +(this.state.isContentScrolled?'scrolled':'');
         return (
         <div className={className}>
             {this.state.isContentShowing && <div className="content-close-button" onClick={this.handleContentClosed}>View other works</div>}
@@ -65,7 +93,7 @@ export default class PortofolioSection extends React.Component{
                <div className="portofolio-viewers">
                 {portofolioItemViewers}
                 </div>
-                <div className="portofolio-content">
+                <div className={contentClassName}  onScroll={this.handleContentScroll} id="portofolio-content">
                 {(this.state.activeIndex>-1) && <PortofolioItemContent {...items[this.state.activeIndex].content}></PortofolioItemContent>}
                 </div>
             </div>
@@ -74,6 +102,10 @@ export default class PortofolioSection extends React.Component{
 }
 
 class PortofolioItemContent extends React.Component{
+    constructor(props){
+        super(props);
+    }
+    
     render(){
         return (
             <div className="portofolio-item-content">
