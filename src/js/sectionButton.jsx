@@ -17,7 +17,7 @@ export default class SectionButton extends React.Component {
         });
     }
     render(){
-        var className="section-button " + this.props.pos + ' ' + (this.props.isFadeout && 'fadeout' ) + ' ' + (this.props.underhood && this.state.isClicked && 'showUnderhood');
+        var className="section-button " + this.props.pos + ' ' + (this.props.isFadeout ? 'fadeout':'' ) + ' ' + (this.props.underhood && this.state.isClicked && 'show-underhood');
         
         return(
             <div className={className} onClick={this.handleOnClick}>

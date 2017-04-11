@@ -14,7 +14,6 @@ export default class SectionWrapper extends React.Component{
         this.props.closeHandler();
     }
     render(){
-        console.log('Rendering section '+ this.props.sectionName + '.');
         var sectionComponent=(()=>{
             if(!this.props.sectionName){
                 return null;
@@ -30,7 +29,6 @@ export default class SectionWrapper extends React.Component{
                     return (<ConnectSection ></ConnectSection>);
             }
         })();
-        console.log('Rendered component: ', sectionComponent);
         var activeClass = this.props.isActive? 'active':'inactive';
         return(
             <div className={"section-container " + activeClass}>
