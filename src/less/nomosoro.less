@@ -1,6 +1,6 @@
 // out: ../css/nomosoro.css, compress: true, strictMath: true, autoprefixer : true,
 body {
-    color: hsla(220, 0%, 40%, 1);
+    color: hsla(220, 0%, 50%, 1);
     font-weight: 300;
 }
 
@@ -82,8 +82,8 @@ div.home-container {
     }
     div.section-button {
         position: fixed;
-        width: 50vw;
-        height: 50vh;
+        width: 100vw;
+        height: 25vh;
         font-size: calc(~'.6vw + 2.5vh');
         background: white;
         transition: transform 1s, background .3s, color .3s;
@@ -93,62 +93,58 @@ div.home-container {
         justify-content: center;
         z-index: 1;
         cursor: default;
-        &.top-left {
-            top: -5px;
-            left: -5px;
-            border: 5px solid lightgray;
-            &:hover {
-                background: hsla(32, 30%, 40%, 1);
-                color: hsla(0, 0, 80%, 1);
+            &.top-left {
+                top: -5px;
+                left: -5px;
+                border: 5px solid lightgray;
+                &:hover {
+                    color:  hsla(32, 50%, 60%, 1);
+                }
+                &.fadeout {
+                    overflow: hidden;
+                    box-shadow: 10px 10px 20px 0px hsla(0, 0%, 60%, 1);
+                    transform: translate(0, -105%);
+                }
             }
-            &.fadeout {
-                overflow: hidden;
-                box-shadow: 10px 10px 20px 0px hsla(0, 0%, 60%, 1);
-                transform: translate(-105%, -105%);
+            &.top-right {
+                top: 25vh;
+                right: -5px;
+                border: 5px solid lightgray;
+                &:hover {
+                    color:  hsla(96, 50%, 60%, 1);
+                }
+                &.fadeout {
+                    overflow: hidden;
+                    box-shadow: -10px 10px 20px 0px hsla(0, 0%, 60%, 1);
+                    transform: translate(105%, 0);
+                }
             }
-        }
-        &.top-right {
-            top: -5px;
-            right: -5px;
-            border: 5px solid lightgray;
-            &:hover {
-                background: hsla(96, 30%, 40%, 1);
-                color: hsla(0, 0, 80%, 1);
+            &.bottom-left {
+                bottom: 25vh;
+                left: -5px;
+                border: 5px solid lightgray;
+                &:hover {
+                    color:  hsla(160, 50%, 60%, 1);
+                }
+                &.fadeout {
+                    overflow: hidden;
+                    box-shadow: 10px -10px 20px 0px hsla(0, 0%, 60%, 1);
+                    transform: translate(-105%, 0);
+                }
             }
-            &.fadeout {
-                overflow: hidden;
-                box-shadow: -10px 10px 20px 0px hsla(0, 0%, 60%, 1);
-                transform: translate(105%, -105%);
+            &.bottom-right {
+                bottom: -5px;
+                right: -5px;
+                border: 5px solid lightgray;
+                &:hover {
+                    color: hsla(224, 50%, 60%, 1);
+                }
+                &.fadeout {
+                    overflow: hidden;
+                    box-shadow: -10px -10px 20px 0px hsla(0, 0%, 60%, 1);
+                    transform: translate(0, 105%);
+                }
             }
-        }
-        &.bottom-left {
-            bottom: -5px;
-            left: -5px;
-            border: 5px solid lightgray;
-            &:hover {
-                background: hsla(160, 30%, 40%, 1);
-                color: hsla(0, 0, 80%, 1);
-            }
-            &.fadeout {
-                overflow: hidden;
-                box-shadow: 10px -10px 20px 0px hsla(0, 0%, 60%, 1);
-                transform: translate(-105%, 105%);
-            }
-        }
-        &.bottom-right {
-            bottom: -5px;
-            right: -5px;
-            border: 5px solid lightgray;
-            &:hover {
-                background: hsla(224, 30%, 40%, 1);
-                color: hsla(0, 0, 80%, 1);
-            }
-            &.fadeout {
-                overflow: hidden;
-                box-shadow: -10px -10px 20px 0px hsla(0, 0%, 60%, 1);
-                transform: translate(105%, 105%);
-            }
-        }
         span.section-button-text,
         span.section-button-underhood {
             display: block;
@@ -189,14 +185,7 @@ div.section-container {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    &.active {
-        z-index: 3;
-        opacity: 1;
-    }
-    &.inactive {
-        z-index: 0;
-        opacity: 0;
-    }
+    z-index: 0;
     div.close-section-button {
         width: 100%;
         max-width: 1200px;
@@ -208,21 +197,22 @@ div.section-container {
         align-items: center;
         transition: background .3s, color .3s;
         cursor: default;
-        z-index: 1;
+        z-index: 3;
         &:hover {
-            background: hsla(224, 30%, 40%, 1);
-            color: hsla(0, 0, 100%, 1);
+            color:  hsla(224, 50%, 60%, 1);
         }
     }
     div.section-content {
+        position:relative;
         width: 100%;
         max-width: 1200px;
         max-height: 100%;
         overflow-y: auto;
-        background: hsla(0, 0%, 85%, 1);
+        background: hsla(0, 0%, 100%, 1);
         div.content-wrapper {
             position: relative;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
         }
     }
 }
@@ -263,7 +253,11 @@ div.section-content.portofolio {
     align-items: center;
     flex-wrap: nowrap;
     overflow-x: hidden;
+    position:relative;
     div.content-close-button {
+        position:absolute;
+        top:-40px;
+        left:0px;
         width: 100%;
         max-width: 1200px;
         font-size: 1.2em;
@@ -272,13 +266,12 @@ div.section-content.portofolio {
         display: flex;
         justify-content: center;
         align-items: center;
-        transition: background .3s, color .3s;
+        transition: background .3s, color .3s,top .5s;
         cursor: default;
         z-index: 1;
         flex-shrink: 0;
         &:hover {
-            background: hsla(224, 30%, 40%, 1);
-            color: hsla(0, 0, 100%, 1);
+            color:  hsla(224, 50%, 60%, 1);
         }
     }
     div.content-wrapper {
@@ -286,6 +279,7 @@ div.section-content.portofolio {
         flex-shrink: 1;
         width: 100%;
         overflow-x: hidden;
+        transition:.5s;
         div.portofolio-viewers {
             position: relative;
             padding-left: 20px;
@@ -301,6 +295,7 @@ div.section-content.portofolio {
             overflow-y: auto;
             align-items: center;
             height: 100%;
+            -webkit-overflow-scrolling: touch;
             div.portofolio-item-viewer {
                 transition: opacity .3s;
                 width: 100%;
@@ -320,7 +315,6 @@ div.section-content.portofolio {
                     justify-content: center;
                 }
                 div.portofolio-item-viewer-summary {
-                    background: hsla(0, 0, 100%, 1);
                     padding: 20px;
                     flex-grow: 1;
                     font-size: 1.4em;
@@ -333,40 +327,38 @@ div.section-content.portofolio {
                 }
                 &:hover {
                     div.portofolio-item-viewer-summary {
-                        background: hsla(160, 30%, 40%, 1);
-                        color: hsla(0, 0, 90%, 1);
+                        color: hsla(160, 50%, 60%, 1);
                     }
                 }
             }
         }
         div.portofolio-content {
             position: absolute;
-            z-index: -1;
+            z-index: 2;
             top: 0px;
             bottom: 0px;
-            left: 0px;
+            left: 100%;
             padding-left: 20px;
             padding-right: 20px;
             width: calc(~'100% - 40px');
-            opacity: 0;
-            transition: opacity .5s;
+            opacity: 1;
+            transition: .5s;
             overflow-x: hidden;
-            transition: background .5s;
+            -webkit-overflow-scrolling: touch;
+            background: hsla(0, 0, 100%, 1);
             &.scrolled {
-                background: hsla(0, 0, 80%, 1);
             }
         }
     }
     &.content-showing {
+        padding-top:40px;
+        div.content-close-button{
+            top:0px;
+        }
         div.content-wrapper {
             height: calc(~"100vh - 80px");
-            div.portofolio-viewers {
-                opacity: 0;
-                z-index: -1;
-            }
             div.portofolio-content {
-                opacity: 1;
-                z-index: 1;
+                left:0%;
             }
         }
     }
@@ -456,68 +448,27 @@ div.article {
         margin-right: 10px;
     }
 }
-
-
-    div.home-container {
-        div.section-button {
-            width: 100vw;
-            height: 25vh;
-            &.top-left {
-                top: -5px;
-                left: -5px;
-                border: 5px solid lightgray;
-                &:hover {
-                    background: hsla(32, 30%, 40%, 1);
-                    color: hsla(0, 0, 80%, 1);
-                }
-                &.fadeout {
-                    overflow: hidden;
-                    box-shadow: 10px 10px 20px 0px hsla(0, 0%, 60%, 1);
-                    transform: translate(0, -105%);
-                }
-            }
-            &.top-right {
-                top: 25vh;
-                right: -5px;
-                border: 5px solid lightgray;
-                &:hover {
-                    background: hsla(96, 30%, 40%, 1);
-                    color: hsla(0, 0, 80%, 1);
-                }
-                &.fadeout {
-                    overflow: hidden;
-                    box-shadow: -10px 10px 20px 0px hsla(0, 0%, 60%, 1);
-                    transform: translate(105%, 0);
-                }
-            }
-            &.bottom-left {
-                bottom: 25vh;
-                left: -5px;
-                border: 5px solid lightgray;
-                &:hover {
-                    background: hsla(160, 30%, 40%, 1);
-                    color: hsla(0, 0, 80%, 1);
-                }
-                &.fadeout {
-                    overflow: hidden;
-                    box-shadow: 10px -10px 20px 0px hsla(0, 0%, 60%, 1);
-                    transform: translate(-105%, 0);
-                }
-            }
-            &.bottom-right {
-                bottom: -5px;
-                right: -5px;
-                border: 5px solid lightgray;
-                &:hover {
-                    background: hsla(224, 30%, 40%, 1);
-                    color: hsla(0, 0, 80%, 1);
-                }
-                &.fadeout {
-                    overflow: hidden;
-                    box-shadow: -10px -10px 20px 0px hsla(0, 0%, 60%, 1);
-                    transform: translate(0, 105%);
-                }
-            }
+div.scroll-helper{
+    position:absolute;
+    bottom:50px;
+    right:30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height:150px;
+    width:64px;
+    overflow:visible;
+    div.scroll-helper-up,div.scroll-helper-down{
+        width:64px;
+        height:64px;
+        background:white;
+        box-shadow:5px 5px 10px 0px hsla(0,0,50%,1);
+        img{
+            width:64px;
+            height:64px;
         }
     }
+}
+
 

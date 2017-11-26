@@ -2,6 +2,7 @@ import React from 'react';
 import NewshubIntro from './article/newshubIntro.jsx';
 import LittleBlueIntro from './article/littleBlueIntro.jsx';
 import SketchesIntro from './article/sketchesIntro.jsx';
+import CubeMazeIntro from './article/cubeMazeIntro.jsx';
 var items=[
     {
         type:'Modeling',
@@ -12,6 +13,17 @@ var items=[
         },
         content:{
             html:(<LittleBlueIntro></LittleBlueIntro>)
+        }
+    },
+    {
+        type:'Game',
+        title:'Cube Maze',
+        viewer:{
+            imgUrl:'./img/cubeMaze/cubeMaze1.png',
+            summary:'CubeMaze - First Unity Project as a 3D Puzzle Game!'
+        },
+        content:{
+            html:(<CubeMazeIntro></CubeMazeIntro>)
         }
     },
     {
@@ -27,7 +39,7 @@ var items=[
     {
         type:'Sketch',
         viewer:{
-            imgUrl:'./img/sketch2.jpg',
+            imgUrl:'./img/sketch6.jpg',
             summary:'Here are several finished or unfinished sketch works of mine, to be continued.'
         },
         content:{
@@ -88,7 +100,7 @@ export default class PortofolioSection extends React.Component{
         var contentClassName="portofolio-content " +(this.state.isContentScrolled?'scrolled':'');
         return (
         <div className={className}>
-            {this.state.isContentShowing && <div className="content-close-button" onClick={this.handleContentClosed}>View other works</div>}
+            <div className="content-close-button" onClick={this.handleContentClosed}>View other works</div>
             <div className="content-wrapper">
                <div className="portofolio-viewers">
                 {portofolioItemViewers}

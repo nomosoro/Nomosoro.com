@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ScrollHelper from './scrollHelper.jsx'
 export default class ThoughtsSection extends React.Component{
     constructor(props){
         super(props);
@@ -7,7 +7,81 @@ export default class ThoughtsSection extends React.Component{
     render(){
         var thoughtContents=(
             <div className="content-wrapper">
-               
+               <div className="article">
+                    <h2 >Two Game Idea came up today.</h2>
+                    <ArticleInfo time="13/4/2017" category={['Idea']}></ArticleInfo>
+                    <p><b>Planet Giant.</b> Literally, in the galaxy Andromeda(lol), there is a human habitual planet left with mysterious ruines of giant buildings. Players have ability to fast travel though.</p>
+                    <p></p>
+
+                </div>
+                <div className="article">
+                    <h2 >Art of Game Design Notes</h2>
+                    <ArticleInfo time="13/4/2017" category={['Design','Game','Art','Logic']}></ArticleInfo>
+                    <h4>Lens #1: Emotion</h4>
+                    <ul>
+                    <li>What emotions would I like my player to experience? Why?</li>
+                    <li>What emotions are players (including me) having when they play now? Why? </li>
+                    <li>How can I bridge the gap between the emotions players are having and the emotions I’d like them to have?</li>
+                    </ul>
+                    <h4>Lens #2: Essensial Experience</h4>
+                    <ul>
+                    <li>What experience do I want the player to have?</li>
+                    <li>What is essential to that experience?</li>
+                    <li>How can my game capture that essence?</li>
+                    </ul>
+                    <h4>Lens #3: Venue</h4>
+                    <ul>
+                    <li>What type of venue best suits the game I’m trying to create? </li>
+                    <li>Does my venue have special properties that will influence my game? </li>
+                    <li>What elements of my game are in harmony with my venue? What elements are not?</li>
+                    </ul>
+                    <h4>Lens #4: Surprise</h4>
+                    <ul>
+                    <li>What will surprise players when they play my game?  </li>
+                    <li>Does the story in my game have surprises? Do the game rules? Does the artwork? The technology?</li>
+                    <li>Do your rules give players ways to surprise each other? </li>
+                    <li>Do your rules give players ways to surprise themselves?</li>
+                    </ul>
+                    <h4>Lens #5: Fun</h4>
+                    <ul>
+                       <li>What parts of my game are fun? Why? </li>
+                       <li>What parts need to be more fun?</li>
+                    </ul>
+                    <h4>Lens #6: Curiosity</h4>
+                    <ul>
+                       <li>What questions does my game put into the player’s mind? </li>
+                       <li>What am I doing to make them care about these questions? </li>
+                       <li>What can I do to make them invent even more questions?</li>
+                    </ul>
+                    <h4>Lens #7: Endogenous Value</h4>
+                    <ul>
+                       <li>What is valuable to the players in my game?  </li>
+                       <li>How can I make it more valuable to them?  </li>
+                       <li>What is the relationship between value in the game and the players’ motivations?</li>
+                    </ul>
+                    <h4>Lens #8: Problem Solving</h4>
+                    <ul>
+                       <li>What problems does my game ask the player to solve?   </li>
+                       <li>Are there hidden problems to solve that arise as part of gameplay? </li>
+                       <li>How can my game generate new problems so that players keep coming back?</li>
+                    </ul>
+                </div>
+                <div className="article">
+                    <h2 className="article-title">
+                        What is <b>DESIGN</b>
+                    </h2>
+                    <ArticleInfo time="12/4/2017" category={['Design','Logic','Art']}></ArticleInfo>
+                    <p>Months ago, I asked one of my old friend who majored in archtecture, that by which words would he define the process or the actual meaning of 'design'. He replied me with a rough sentence stating that design is to make an idea become reality. I was then dissatisified, as I could not clearly figure out the difference between the word 'implementation' and what he defines 'design'. I lately wikied for an anwser, and wiki gave me very concise and dedicated article and I read through it. I would not redraft another article trying to beat the authorized one, instead I will try to proclaim, that when we consider design process in a goal-wise manner, design shuold only have two purpose in general: Optimization and Expression</p>
+                    <h4>Optimization</h4>
+                    <p>In the Wiki article, The Rational Model is the actual process of Optimization-driven design. Involved design fields mainly spread in engineering, researching and other reconductable field, which can be easily and massively test and experimented. But when we consider design goal-wise, its mere and only purpose is to make things better for usage, wherever the utilitization will go to, say visual elegancy, or efficiency, as long as the attribute is optimizable, scalar or refinable. And there is actually nothing can not be optimized, as things can not been optimized means that things either reached its best or it can not be judged/valued good or bad. For the latter situation, when things can not be judged/valued, the meaning of optimization it self dissolved into nothing, as optimization was defined based on measurable value. </p>
+                    <p>
+                    But be warned, that optimization is not a converged, or guaranteened result. The optimized value varied over time, culture, etc a lot of variables, and that is where designers will never come to its end. And mutations, or discovery will potentially reveal new level of optimization, which will as well make the optimization process endless, as long as we cannot prove that the current state has no space to advance higher.</p>
+                    <h4>Expression</h4>
+                    <p>Just like poem to math, expression is nearly in contract manner to the rational optimization. In Wiki the similar process is called The Action-Centric Model, which is infact a methods of Optimization, that will evoke possible mutations to discover new level of optimization. However, Expression in our content, which is goal-wise design, is not just an approach to optimize, yet another dimension of design, another defination of design. Famous example would always come to the famous architectures, that would express the artist's own personal emotions, or create a atmosphere or general concept of a certine implementation. Eiffel Tower, shakespears, they are all designed to express their authors' thesis, prefrence and believes.  People would doubt that expression should also be categorized into optimization, however that holds false. As expression can not be valued, measured but only subjectively judged, which has no significant meaning to be optimized. </p>
+                    <p>Design towards expression happens also alot in games. Especially with those zero talk just interaction games such as Inside and The Witness, or Stanley's Parable for contrast. This thesis stands even stronger when video game design is considered a general process, that forging both music, gameplay, visual, plot together into a general feeling that would evoke players interest. Just like this website is designed to express a feeling of simple, clean and neat, although it only contains visual and interactive content, it can be added other sense or dimension of content as well to help its expression.</p>
+                    <p>That's for today. I am going to sleep. 28 hours Marathon tho lol.</p>
+                </div>
+                <br></br>
                 <div className="article">
                     <h2 className="article-title">
                         27/3/2017 Analysis about <cite>Dark Souls</cite>
@@ -67,7 +141,7 @@ export default class ThoughtsSection extends React.Component{
             </div>
         )
         return (
-            <div className="section-content thoughts">
+            <div className="section-content thoughts" >
                 {thoughtContents}
             </div>
         )
